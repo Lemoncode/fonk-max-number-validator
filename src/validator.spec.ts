@@ -64,7 +64,7 @@ describe('fonk-max-number-validator specs', () => {
     });
   });
 
-  it('should return succeeded validation when it feeds value is less than max-value', () => {
+  it('should return succeeded validation when it feeds value is lower than max-value', () => {
     // Arrange
     const value = 1;
 
@@ -107,14 +107,14 @@ describe('fonk-max-number-validator specs', () => {
     // Act
     const result = validator({
       value,
-      message: 'The value must be less than 1',
+      message: 'The value must be lower than 1',
       customArgs: { maxValue: 1, inclusive: false },
     });
 
     // Assert
     expect(result).toEqual({
       succeeded: false,
-      message: 'The value must be less than 1',
+      message: 'The value must be lower than 1',
       type: VALIDATOR_TYPE,
     });
   });
@@ -132,7 +132,7 @@ describe('fonk-max-number-validator specs', () => {
     // Assert
     expect(result).toEqual({
       succeeded: false,
-      message: 'The value must be less than or equal to 1',
+      message: 'The value must be lower than or equal to 1',
       type: VALIDATOR_TYPE,
     });
   });
@@ -149,7 +149,7 @@ describe('fonk-max-number-validator specs', () => {
     // Assert
     expect(result).toEqual({
       succeeded: false,
-      message: 'The value must be less than or equal to 0',
+      message: 'The value must be lower than or equal to 0',
       type: VALIDATOR_TYPE,
     });
   });
@@ -166,7 +166,7 @@ describe('fonk-max-number-validator specs', () => {
     // Assert
     expect(result).toEqual({
       succeeded: false,
-      message: 'The value must be less than or equal to 0',
+      message: 'The value must be lower than or equal to 0',
       type: VALIDATOR_TYPE,
     });
   });
@@ -183,7 +183,7 @@ describe('fonk-max-number-validator specs', () => {
     // Assert
     expect(result).toEqual({
       succeeded: false,
-      message: 'The value must be less than or equal to 0',
+      message: 'The value must be lower than or equal to 0',
       type: VALIDATOR_TYPE,
     });
   });
@@ -200,7 +200,7 @@ describe('fonk-max-number-validator specs', () => {
     // Assert
     expect(result).toEqual({
       succeeded: false,
-      message: 'The value must be less than or equal to 0',
+      message: 'The value must be lower than or equal to 0',
       type: VALIDATOR_TYPE,
     });
   });
@@ -217,7 +217,7 @@ describe('fonk-max-number-validator specs', () => {
     // Assert
     expect(result).toEqual({
       succeeded: false,
-      message: 'The value must be less than or equal to 0',
+      message: 'The value must be lower than or equal to 0',
       type: VALIDATOR_TYPE,
     });
   });
@@ -234,7 +234,7 @@ describe('fonk-max-number-validator specs', () => {
     // Assert
     expect(result).toEqual({
       succeeded: false,
-      message: 'The value must be less than or equal to 0',
+      message: 'The value must be lower than or equal to 0',
       type: VALIDATOR_TYPE,
     });
   });

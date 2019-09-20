@@ -4,7 +4,7 @@ import { buildCustomMessage, isDefined } from './validator.business';
 
 const VALIDATOR_TYPE = 'MAX_NUMBER';
 
-let defaultMessage = 'The value must be less than or equal to {{maxValue}}';
+let defaultMessage = 'The value must be lower than or equal to {{maxValue}}';
 export const setErrorMessage = message => (defaultMessage = message);
 
 const defaultCustomArgs: CustomValidatorArgs = {

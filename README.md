@@ -6,7 +6,7 @@
 
 This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings validation capabilities to:
 
-- Validate if a number field of a form is less (or optionally equal) than a maximum value
+- Validate if a number field of a form is lower (or optionally equal) than a maximum value
 
 How to add it to an existing form validation schema:
 
