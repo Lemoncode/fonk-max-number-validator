@@ -6,9 +6,7 @@
 
 This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings validation capabilities to:
 
-// TODO: Update description and example.
-
-- Validate if a field of a form ....
+- Validate if a number field of a form is greater (or optionally equal) than a minimum value
 
 How to add it to an existing form validation schema:
 
@@ -28,6 +26,20 @@ import { maxNumber } from '@lemoncode/fonk-max-number-validator';
 
 const validationSchema = {
   price: [maxNumber.validator],
+};
+```
+
+We can specify the maximum value allowed and if it is inclusive:
+
+```javascript
+import { maxNumber } from '@lemoncode/fonk-max-number-validator';
+const validationSchema = {
+  price: [
+    {
+      validator: maxNumber.validator,
+      customArgs: { maxValue: 5, inclusive: false },
+    },
+  ],
 };
 ```
 
