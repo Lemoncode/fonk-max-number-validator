@@ -50,7 +50,7 @@ You can customize the error message displayed in two ways:
 ```javascript
 import { maxNumber } from '@lemoncode/fonk-max-number-validator';
 
-maxNumber.setErrorMessage('El campo debe de ser numérico');
+maxNumber.setErrorMessage('El campo debe de ser menor que {{maxValue}}');
 ```
 
 - Locally just override the error message for this validationSchema:
