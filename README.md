@@ -14,7 +14,7 @@ We have the following form model:
 
 ```
 const myFormValues = {
-  product : 'shoes',
+  product: 'shoes',
   price: 20,
 }
 ```
@@ -25,7 +25,9 @@ We can add a maxNumber validation to the myFormValues
 import { maxNumber } from '@lemoncode/fonk-max-number-validator';
 
 const validationSchema = {
-  price: [maxNumber.validator],
+  field: {
+    price: [maxNumber.validator],
+  },
 };
 ```
 
@@ -34,12 +36,14 @@ We can specify the maximum value allowed and if it is inclusive:
 ```javascript
 import { maxNumber } from '@lemoncode/fonk-max-number-validator';
 const validationSchema = {
-  price: [
-    {
-      validator: maxNumber.validator,
-      customArgs: { maxValue: 5, inclusive: false },
-    },
-  ],
+  field: {
+    price: [
+      {
+        validator: maxNumber.validator,
+        customArgs: { maxValue: 5, inclusive: false },
+      },
+    ],
+  },
 };
 ```
 
@@ -59,12 +63,14 @@ maxNumber.setErrorMessage('El campo debe de ser menor que {{maxValue}}');
 import { maxNumber } from '@lemoncode/fonk-max-number-validator';
 
 const validationSchema = {
-  price: [
-    {
-      validator: maxNumber.validator,
-      message: 'Error message only updated for the validation schema',
-    },
-  ],
+  field: {
+    price: [
+      {
+        validator: maxNumber.validator,
+        message: 'Error message only updated for the validation schema',
+      },
+    ],
+  },
 };
 ```
 
