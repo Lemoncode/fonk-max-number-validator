@@ -1,6 +1,6 @@
 {
   "name": "@lemoncode/fonk-max-number-validator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Update description: This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings validation capabilities to validate if a number field of a form is lower (or optionally equal) than a maximum value",
   "main": "dist/@lemoncode/fonk-max-number-validator.cjs.js",
   "module": "dist/@lemoncode/fonk-max-number-validator.esm.js",
