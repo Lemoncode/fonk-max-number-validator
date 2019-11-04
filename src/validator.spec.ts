@@ -1,4 +1,4 @@
-import { validator, setErrorMessage } from './validator';
+import { validator, setErrorMessage, setCustomArgs } from './validator';
 
 const VALIDATOR_TYPE = 'MAX_NUMBER';
 const TEST_MESSAGE = 'Custom message for tests';
@@ -178,6 +178,7 @@ describe('fonk-max-number-validator specs', () => {
     // Act
     const result = validator({
       value,
+      customArgs: { strictTypes: true },
     });
 
     // Assert
@@ -212,6 +213,7 @@ describe('fonk-max-number-validator specs', () => {
     // Act
     const result = validator({
       value,
+      customArgs: { strictTypes: true },
     });
 
     // Assert
@@ -279,6 +281,23 @@ describe('fonk-max-number-validator specs', () => {
     expect(result).toEqual({
       succeeded: false,
       message: 'The value must be lower than 100!',
+      type: VALIDATOR_TYPE,
+    });
+  });
+
+  it('should overwrite default customArgs when it feeds value is valid and calls to setCustomArgs', () => {
+    // Arrange
+    const value = '1';
+
+    setCustomArgs({ strictTypes: true });
+
+    // Act
+    const result = validator({ value, customArgs: { maxValue: 5 } });
+
+    // Assert
+    expect(result).toEqual({
+      succeeded: false,
+      message: 'The value must be lower than 5!',
       type: VALIDATOR_TYPE,
     });
   });
