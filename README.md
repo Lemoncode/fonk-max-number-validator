@@ -1,6 +1,6 @@
 # fonk-max-number-validator
 
-[![CircleCI](https://badgen.net/github/status/Lemoncode/fonk-max-number-validator/master/ci?icon=circleci&label=circleci)](https://circleci.com/gh/Lemoncode/fonk-max-number-validator/tree/master)
+[![CircleCI](https://badgen.net/github/status/Lemoncode/fonk-max-number-validator/master?icon=circleci&label=circleci)](https://circleci.com/gh/Lemoncode/fonk-max-number-validator/tree/master)
 [![NPM Version](https://badgen.net/npm/v/@lemoncode/fonk-max-number-validator?icon=npm&label=npm)](https://www.npmjs.com/package/@lemoncode/fonk-max-number-validator)
 [![bundle-size](https://badgen.net/bundlephobia/min/@lemoncode/fonk-max-number-validator)](https://bundlephobia.com/result?p=@lemoncode/fonk-max-number-validator)
 
@@ -8,13 +8,19 @@ This is a [fonk](https://github.com/Lemoncode/fonk) microlibrary that brings val
 
 - Validate if a number field of a form is lower (or optionally equal) than a maximum value
 
+How to install it:
+
+```bash
+npm install @lemoncode/fonk-max-number-validator --save
+```
+
 How to add it to an existing form validation schema:
 
 We have the following form model:
 
 ```
 const myFormValues = {
-  product : 'shoes',
+  product: 'shoes',
   price: 20,
 }
 ```
@@ -25,7 +31,9 @@ We can add a maxNumber validation to the myFormValues
 import { maxNumber } from '@lemoncode/fonk-max-number-validator';
 
 const validationSchema = {
-  price: [maxNumber.validator],
+  field: {
+    price: [maxNumber.validator],
+  },
 };
 ```
 
@@ -34,12 +42,14 @@ We can specify the maximum value allowed and if it is inclusive:
 ```javascript
 import { maxNumber } from '@lemoncode/fonk-max-number-validator';
 const validationSchema = {
-  price: [
-    {
-      validator: maxNumber.validator,
-      customArgs: { maxValue: 5, inclusive: false },
-    },
-  ],
+  field: {
+    price: [
+      {
+        validator: maxNumber.validator,
+        customArgs: { maxValue: 5, inclusive: false },
+      },
+    ],
+  },
 };
 ```
 
@@ -59,12 +69,14 @@ maxNumber.setErrorMessage('El campo debe de ser menor que {{maxValue}}');
 import { maxNumber } from '@lemoncode/fonk-max-number-validator';
 
 const validationSchema = {
-  price: [
-    {
-      validator: maxNumber.validator,
-      message: 'Error message only updated for the validation schema',
-    },
-  ],
+  field: {
+    price: [
+      {
+        validator: maxNumber.validator,
+        message: 'Error message only updated for the validation schema',
+      },
+    ],
+  },
 };
 ```
 

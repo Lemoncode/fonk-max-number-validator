@@ -32,8 +32,7 @@ const validate = (value, args: CustomValidatorArgs) =>
       : value < args.maxValue
     : false;
 
-export const isDefined = value =>
-  value !== void 0 && value !== null && value !== '';
+const isDefined = value => value !== void 0 && value !== null && value !== '';
 
 export const validator: FieldValidationFunctionSync = fieldValidatorArgs => {
   const {
@@ -54,7 +53,7 @@ export const validator: FieldValidationFunctionSync = fieldValidatorArgs => {
     succeeded,
     message: succeeded
       ? ''
-      : parseMessageWithCustomArgs((message as string) || defaultMessage, args),
+      : parseMessageWithCustomArgs(message as string, args),
     type: VALIDATOR_TYPE,
   };
 };
