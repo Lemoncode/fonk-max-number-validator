@@ -3,7 +3,12 @@ import { maxNumber } from '@lemoncode/fonk-max-number-validator';
 
 const validationSchema = {
   field: {
-    myField: [{ validator: maxNumber.validator, customArgs: { maxValue: 5 } }],
+    myField: [
+      {
+        validator: maxNumber.validator,
+        customArgs: { maxValue: 5, strictTypes: true },
+      },
+    ],
   },
 };
 
